@@ -1,0 +1,11 @@
+row_a,row_b,label
+Name: John [COL] Age: 30 [COL] City: New York,Name: Jon [COL] Age: 30 [COL] Location: NYC,1
+Name: Alice [COL] Age: 25 [COL] City: Los Angeles,Name: Alice [COL] Age: 25 [COL] Location: Los Angeles,1
+Name: Bob [COL] Age: 40 [COL] City: San Francisco,Name: Robert [COL] Age: 40 [COL] Location: SF,0
+Name: Sara [COL] Age: 22 [COL] City: Chicago,Name: Sarah [COL] Age: 22 [COL] Location: Chi-town,0
+Name: Mike [COL] Age: 35 [COL] City: Miami,Name: Michael [COL] Age: 35 [COL] Location: Miami,1
+Name: Emily [COL] Age: 28 [COL] City: Boston,Name: Emily [COL] Age: 28 [COL] Location: Boston,1
+Name: Steve [COL] Age: 45 [COL] City: Seattle,Name: Steven [COL] Age: 45 [COL] Location: Seattle,0
+Name: Anna [COL] Age: 32 [COL] City: Denver,Name: Anna [COL] Age: 32 [COL] Location: Denver,1
+Name: Jake [COL] Age: 29 [COL] City: Austin,Name: Jacob [COL] Age: 29 [COL] Location: Austin,0
+Name: Laura [COL] Age: 26 [COL] City: Dallas,Name: Laura [COL] Age: 26 [COL] Location: Dallas,1

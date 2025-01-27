@@ -1,0 +1,44 @@
+import pandas as pd
+import dask.dataframe as df
+from transformers import AutoTokenizer
+class FileHandler:
+    def __init__(self,tokenizer):
+        self.tokenizer = tokenizer
+    
+    def read_file_to_df(self, file):
+        try:
+            if file.filename.endswith('.csv'):
+                df = pd.read_csv(file)
+            if file.filename.endswith('xlsx'):
+                df = pd.read_excel(file)
+        except Exception as e:
+            raise ValueError("Could not read file. Make sure it is .csv or .xlsx")
+        return df
+    
+    def read_input_files(self, file_1,file_2):
+        df_1=self.read_file_to_df(file_1)
+        df_2=self.read_file_to_df(file_2)
+        return df_1, df_2
+
+    def tokenize_rows(self, df):
+        columns=df.columns
+        return self.tokenizer(df[columns[0]].tolist(),df[columns[1]].tolist(),truncation=True, padding=True, max_length=128, return_tensors="pt")
+        
+        
+
+    
+class Model: 
+    def __init__(self, model,tokenizer):
+        self.model =model
+        self.tokenizer = tokenizer
+        
+    def tokenize_dataframe(dataframe:pd.DataFrame)->pd.DataFrame:
+        for row in dataframe: 
+            tokenizer.token(row)
+        return dataframe
+    
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+df =pd.read_csv('/Users/user/Documents/Join_App/matching_data.csv')
+handler=FileHandler(tokenizer)
+print(type(handler.tokenize_rows(df)))
